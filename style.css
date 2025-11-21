@@ -833,7 +833,7 @@ body.view-control-buttons .viewControlButton {
   position: absolute;
   top: 60px;
   right: 0px;
-  width: 240px;
+  width: 480px;
   z-index: 9999;
   opacity: 0.9;
 }
