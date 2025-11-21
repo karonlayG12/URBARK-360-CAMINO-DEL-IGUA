@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CAMINO DEL IGUA_URBARK</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+
+<style>
+  /* LOGO SUPERIOR DERECHA */
+  #logoUrbark {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 130px;
+    z-index: 9999;
+    opacity: 0.95;
+    transition: opacity 0.3s ease;
+  }
+  #logoUrbark:hover {
+    opacity: 1;
+  }
+
+  /* OVERLAY BORROSO AL INICIAR */
+  #overlayIntro {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(9px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 22px;
+    z-index: 99999;
+    opacity: 1;
+    transition: opacity 1.5s ease;
+  }
+  #overlayIntro.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+
+</head>
+<body class="multiple-scenes ">
+
+<!-- LOGO FIJO -->
+<img id="logoUrbark" src="img/URBARK FINAL.png" alt="Urbark Logo">
+
+<!-- OVERLAY BORROSO -->
+<div id="overlayIntro">
+  <div>
+    <p>Bienvenido al recorrido 360°</p>
+    <p style="font-size:16px; opacity:0.85;">Cargando…</p>
+  </div>
+</div>
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="javascript:void(0)" class="scene" data-id="0-ci_fachada-principal_1">
+        <li class="text">CI_FACHADA PRINCIPAL_1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="1-ci_exterior-parqueadero-">
+        <li class="text">CI_EXTERIOR PARQUEADERO </li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="2-ci_ingreso">
+        <li class="text">CI_INGRESO</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="3-ci_escaleras-descanso">
+        <li class="text">CI_ESCALERAS DESCANSO</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="4-ci_escaleras-descanso2">
+        <li class="text">CI_ESCALERAS DESCANSO.2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="5-ci_escaleras-piso-2">
+        <li class="text">CI_ESCALERAS PISO 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="6-ci_corredor-cocina">
+        <li class="text">CI_CORREDOR COCINA</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="7-ci-cocina">
+        <li class="text">CI-COCINA</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="8-ci_lavandera_v1">
+        <li class="text">CI_LAVANDERÍA_V1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="9-ci_lavandera_v2">
+        <li class="text">CI_LAVANDERÍA_V2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="10-ci_comedor">
+        <li class="text">CI_COMEDOR</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="11-ci_cruce-habitaciones-piso-1">
+        <li class="text">CI_CRUCE HABITACIONES PISO 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="12-ci_habitacin-1">
+        <li class="text">CI_HABITACIÓN 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="13-ci_habitacin-2">
+        <li class="text">CI_HABITACIÓN 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="14-0131_bao-social">
+        <li class="text">013.1_BAÑO SOCIAL</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="15-ci_sala-1-sofa">
+        <li class="text">CI_SALA 1-SOFA</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="16-ci_vista-exterior-sala">
+        <li class="text">CI_VISTA EXTERIOR SALA</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="17-ci_vista-jardn-posterior">
+        <li class="text">CI_VISTA JARDÍN POSTERIOR</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="18-ci_vista-jardn-posterior_2">
+        <li class="text">CI_VISTA JARDÍN POSTERIOR_2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="19-ci_pasillo-piso-2">
+        <li class="text">CI_PASILLO PISO 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="20-ci_sala-2_-v1">
+        <li class="text">CI_SALA 2_ V1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="21-ci_linos-bao-2">
+        <li class="text">CI_LINOS BAÑO 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="22-ci_-bao-2">
+        <li class="text">CI_ BAÑO 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="23-ci_habitacin-3">
+        <li class="text">CI_HABITACIÓN 3</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="24-ci_habitacin-principal">
+        <li class="text">CI_HABITACIÓN PRINCIPAL</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="25-ci_habitacin-principal-v2">
+        <li class="text">CI_HABITACIÓN PRINCIPAL V2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="26-ci_habitacin-princ-bao">
+        <li class="text">CI_HABITACIÓN PRINC BAÑO</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<a href="javascript:void(0)" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+<a href="javascript:void(0)" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+<script src="vendor/screenfull.min.js"></script>
+<script src="vendor/bowser.min.js"></script>
+<script src="vendor/marzipano.js"></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+<script>
+  /* Animar overlay al cargar */
+  window.onload = function () {
+    setTimeout(() => {
+      document.getElementById("overlayIntro").classList.add("hidden");
+    }, 1800);
+  };
+</script>
+
+</body>
+</html>
