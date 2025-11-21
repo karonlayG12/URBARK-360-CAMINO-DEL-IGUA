@@ -43,6 +43,7 @@
       opacity: 1;
       transition: opacity 1.5s ease;
       padding: 30px;
+      pointer-events: all;
     }
 
     #overlayIntro.hidden {
@@ -62,9 +63,10 @@
     }
 
     #countdown {
-      font-size: 20px;
+      font-size: 22px;
       margin-top: 10px;
       opacity: 0.9;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -94,7 +96,7 @@
 <!-- LISTA DE ESCENAS -->
 <div id="sceneList">
   <ul class="scenes">
-    <!-- (Tu lista original de escenas se mantiene igual) -->
+    <!-- (Tu lista original de escenas va aquí) -->
   </ul>
 </div>
 
@@ -146,14 +148,16 @@
 <script src="data.js"></script>
 <script src="index.js"></script>
 
-<!-- SCRIPT DEL CONTADOR Y DESVANECIMIENTO -->
+<!-- SCRIPT DEL CONTADOR -->
 <script>
   let seconds = 3;
   const countdownEl = document.getElementById("countdown");
 
   const interval = setInterval(() => {
     seconds--;
-    countdownEl.textContent = seconds;
+    if (seconds >= 0) {
+      countdownEl.textContent = seconds;
+    }
 
     if (seconds <= 0) {
       clearInterval(interval);
