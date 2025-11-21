@@ -388,5 +388,29 @@
 
   // Display the initial scene.
   switchScene(scenes[0]);
+<script>
+  // Tiempo antes de mostrar el conteo (en milisegundos)
+  const delayAntesConteo = 800; // después de "Cargando..."
+
+  // Segundos del conteo
+  let contador = 3;
+
+  // Elemento donde está el texto
+  const texto = document.getElementById("loadingText");
+
+  // Después de un momento, iniciar el conteo
+  setTimeout(() => {
+    const intervalo = setInterval(() => {
+      texto.textContent = "Cargando... " + contador;
+
+      contador--;
+
+      if (contador < 0) {
+        clearInterval(intervalo);
+        texto.textContent = "Listo!";
+      }
+    }, 1000); // cada 1 segundo
+  }, delayAntesConteo);
+</script>
 
 })();
