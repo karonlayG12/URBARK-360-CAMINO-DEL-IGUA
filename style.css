@@ -831,7 +831,7 @@ body.view-control-buttons .viewControlButton {
 
 #logoFijo {
   position: absolute;
-  top: 40px;
+  top: 50px;
   right: 0px;
   width: 130px;
   z-index: 9999;
