@@ -833,12 +833,12 @@ body.view-control-buttons .viewControlButton {
   position: absolute;
   top: 60px;
   right: 0px;
-  width: 480px;
+  width: 120px;
   z-index: 9999;
   opacity: 0.9;
 }
 
 #logoFijo img {
-  width: 200%;
+  width: 100%;
   height: auto;
 }
