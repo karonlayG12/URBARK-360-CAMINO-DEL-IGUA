@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
 <style> @-ms-viewport { width: device-width; } </style>
+
 <link rel="stylesheet" href="vendor/reset.min.css">
 <link rel="stylesheet" href="style.css">
 
@@ -23,7 +24,7 @@
     opacity: 1;
   }
 
-  /* OVERLAY BORROSO */
+  /* OVERLAY BORROSO AL INICIAR */
   #overlayIntro {
     position: fixed;
     inset: 0;
@@ -41,6 +42,7 @@
     transition: opacity 1.5s ease;
     padding: 30px;
   }
+
   #overlayIntro.hidden {
     opacity: 0;
     pointer-events: none;
@@ -50,22 +52,15 @@
     margin-bottom: 18px;
     line-height: 1.4;
   }
-
-  #countdown {
-    font-size: 28px;
-    margin-top: 10px;
-    font-weight: bold;
-    opacity: 0.9;
-  }
 </style>
 
 </head>
-<body class="multiple-scenes">
+<body class="multiple-scenes ">
 
 <!-- LOGO FIJO -->
 <img id="logoUrbark" src="img/URBARK FINAL.png" alt="Urbark Logo">
 
-<!-- OVERLAY BORROSO CON CONTEO -->
+<!-- OVERLAY BORROSO -->
 <div id="overlayIntro">
   <div class="intro-text">
     <p>Bienvenido al recorrido 360°</p>
@@ -74,20 +69,127 @@
 
     <p>Las características, referencias, especificaciones, materiales y acabados aquí mencionados podrán variar según disponibilidad del proveedor, decisiones técnicas o ajustes propios del desarrollo del proyecto. Para conocer los detalles exactos de los elementos incluidos, se recomienda consultar con el asesor comercial.</p>
 
-    <p>Cargando…</p>
+    <p><strong>Cargando…</strong></p>
 
-    <p id="countdown">24</p>
+    <!-- Aquí aparecerá el conteo -->
+    <p id="countdown" style="font-size:18px; opacity:0.9; margin-top:10px;">Iniciando en 24 segundos…</p>
   </div>
 </div>
 
-<!-- PANORAMA -->
+<!-- VISOR -->
 <div id="pano"></div>
 
 <!-- LISTA DE ESCENAS -->
 <div id="sceneList">
   <ul class="scenes">
 
-    <!-- Tus escenas van aquí (no las modifiqué) -->
+      <a href="javascript:void(0)" class="scene" data-id="0-ci_fachada-principal_1">
+        <li class="text">CI_FACHADA PRINCIPAL_1</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="1-ci_exterior-parqueadero-">
+        <li class="text">CI_EXTERIOR PARQUEADERO </li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="2-ci_ingreso">
+        <li class="text">CI_INGRESO</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="3-ci_escaleras-descanso">
+        <li class="text">CI_ESCALERAS DESCANSO</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="4-ci_escaleras-descanso2">
+        <li class="text">CI_ESCALERAS DESCANSO.2</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="5-ci_escaleras-piso-2">
+        <li class="text">CI_ESCALERAS PISO 2</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="6-ci_corredor-cocina">
+        <li class="text">CI_CORREDOR COCINA</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="7-ci-cocina">
+        <li class="text">CI-COCINA</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="8-ci_lavandera_v1">
+        <li class="text">CI_LAVANDERÍA_V1</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="9-ci_lavandera_v2">
+        <li class="text">CI_LAVANDERÍA_V2</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="10-ci_comedor">
+        <li class="text">CI_COMEDOR</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="11-ci_cruce-habitaciones-piso-1">
+        <li class="text">CI_CRUCE HABITACIONES PISO 1</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="12-ci_habitacin-1">
+        <li class="text">CI_HABITACIÓN 1</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="13-ci_habitacin-2">
+        <li class="text">CI_HABITACIÓN 2</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="14-0131_bao-social">
+        <li class="text">013.1_BAÑO SOCIAL</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="15-ci_sala-1-sofa">
+        <li class="text">CI_SALA 1-SOFA</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="16-ci_vista-exterior-sala">
+        <li class="text">CI_VISTA EXTERIOR SALA</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="17-ci_vista-jardn-posterior">
+        <li class="text">CI_VISTA JARDÍN POSTERIOR</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="18-ci_vista-jardn-posterior_2">
+        <li class="text">CI_VISTA JARDÍN POSTERIOR_2</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="19-ci_pasillo-piso-2">
+        <li class="text">CI_PASILLO PISO 2</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="20-ci_sala-2_-v1">
+        <li class="text">CI_SALA 2_ V1</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="21-ci_linos-bao-2">
+        <li class="text">CI_LINOS BAÑO 2</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="22-ci_-bao-2">
+        <li class="text">CI_ BAÑO 2</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="23-ci_habitacin-3">
+        <li class="text">CI_HABITACIÓN 3</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="24-ci_habitacin-principal">
+        <li class="text">CI_HABITACIÓN PRINCIPAL</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="25-ci_habitacin-principal-v2">
+        <li class="text">CI_HABITACIÓN PRINCIPAL V2</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="26-ci_habitacin-princ-bao">
+        <li class="text">CI_HABITACIÓN PRINC BAÑO</li>
+      </a>
 
   </ul>
 </div>
@@ -136,24 +238,31 @@
 <script src="vendor/screenfull.min.js"></script>
 <script src="vendor/bowser.min.js"></script>
 <script src="vendor/marzipano.js"></script>
+
 <script src="data.js"></script>
 <script src="index.js"></script>
 
-<!-- SCRIPT DEL CONTEO REGRESIVO -->
+<!-- CONTEO REGRESIVO + DESVANECER -->
 <script>
-  let seconds = 24;
-  const countdownEl = document.getElementById("countdown");
+  let tiempo = 24;
+  const countdown = document.getElementById("countdown");
 
-  const interval = setInterval(() => {
-    seconds--;
-    countdownEl.textContent = seconds;
+  const intervalo = setInterval(() => {
+    tiempo--;
+    countdown.textContent = "Iniciando en " + tiempo + " segundos…";
 
-    if (seconds <= 0) {
-      clearInterval(interval);
-      document.getElementById("overlayIntro").classList.add("hidden");
+    if (tiempo <= 0) {
+      clearInterval(intervalo);
     }
   }, 1000);
+
+  window.onload = function () {
+    setTimeout(() => {
+      document.getElementById("overlayIntro").classList.add("hidden");
+    }, 24000);
+  };
 </script>
 
 </body>
 </html>
+
